@@ -1,0 +1,71 @@
+.container { border:2px solid #ccc; width:500px; height: 100px; padding-top: 10px; overflow-y: scroll;
+
+    box-shadow: 0 2px 10px 1px rgba(0,0,0,0.5);}
+nav{
+    background-color: #ff8ba7 !important;
+    padding: 70px 30px 70px 30px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+    height: 80px;
+}
+nav a{
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 50px;
+}
+nav ul{
+    margin-left: 550px;
+}
+.main{
+    margin: 0px auto auto auto;
+    padding-top: 30px;
+    text-align: center;
+    background-image: url("https://image.freepik.com/free-photo/blur-hospital_1203-7956.jpg");
+    height: 700px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h4{
+    margin: 0px auto 20px auto;
+    padding-top: 30px;
+}
+.age{
+  background: rgba(255,255,255,0.4);
+  border: none;
+  display: block;
+  outline: none;
+  width: 400px;
+  height: 30p;
+  top: 250px;
+  margin: 0 auto;
+  padding: 10px;
+  color: #333;
+  -webkit-box-shadow: 0 2px 10px 1px rgba(0,0,0,0.5);
+  box-shadow: 0 2px 10px 1px rgba(0,0,0,0.5);
+}
+.card{
+    margin: 30px auto 30px auto;
+    box-shadow: 0 2px 10px 1px rgba(0,0,0,0.5);
+}
+.speech{
+    margin: auto;
+    text-align: center;
+}
+.speech img{
+    width: 40px !important;
+    border-radius: 50%;
+}
+.speech img:hover{
+    opacity: 0.6;
+    cursor: pointer;
+}
+.speech textarea{
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 2px 10px 1px rgba(0,0,0,0.5);
+    padding: 4px 4px 4px 4px;
+    margin: 20px auto 20px auto;
+    width: 500px;
+}

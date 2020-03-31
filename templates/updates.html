@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Updates Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel = "stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+</head>
+
+<body>
+    <div id="google_translate_element"></div>
+    <div>
+        <nav class="navbar navbar-expand-lg">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse">
+                <h2 style="font-weight: bold; width: 500px; " href="#"><i
+                        class="fas fa-clinic-medical"></i>
+                    MEDI-CARE</h2>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/updates">Updates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/suggest">Expert Opinion</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="main">
+      {% for item in content.articles %}
+        <div class="card" style="width: 30rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{item.title}}</h5>
+                <h5 class="card-title">{{item.hindititle}}</h5>
+                <p class="card-text">{{item.desc}}</p>
+                <form action="/viewpage" method = "post">
+                  <input type="hidden" name="link" value="{{item.url}}">
+                  <input type="submit" class="btn btn-primary" value="view more">
+                </form>
+            </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>

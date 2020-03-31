@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Welcome to MEDI-CARE!</title>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel = "stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+</head>
+
+<body>
+  <div id="google_translate_element"></div>
+  <div>
+    <nav class="navbar navbar-expand-lg">
+      <div class="collapse navbar-collapse">
+        <h2 style="font-weight: bold; width: 500px;" href="#"><i class="fas fa-clinic-medical"></i>
+          MEDI-CARE</h2>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/updates">Updates</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/suggest">Expert Opinion</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="main">
+
+    <!-- Search Form -->
+    <form id="labnol" method="get" action="/speech">
+      <div class="speech">
+        <textarea type="text" name="q" id="transcript" rows="7"
+          cols="30">{{content.text}}</textarea><br>
+        <button class="btn btn-danger" type="submit" name= "sub" value="speak" style="margin-bottom: 2%;">Speak</button><br>
+        <!-- <button class="btn btn-success" type="submit" name= "sub" value="email">Email</button>  -->
+      </div>
+    </form>
+  </div>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+    }
+  </script>
+
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+</body>
+
+</html>

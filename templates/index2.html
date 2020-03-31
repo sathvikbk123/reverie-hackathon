@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Welcome to MEDI-CARE!</title>
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link rel = "stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+</head>
+
+<body>
+	<div id="google_translate_element"></div>
+	<div>
+		<nav class="navbar navbar-expand-lg">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+				aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse">
+				<h2 style="font-weight: bold; width: 500px;" href="#"><i class="fas fa-clinic-medical"></i>
+					MEDI-CARE</h2>
+				<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+					<li class="nav-item active">
+						<a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/updates">Updates</a>
+                    </li>
+					<li class="nav-item">
+						<a class="nav-link" href="/suggest">Expert Opinion</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<div class="main">
+		<form action="/" method="post">
+			<h4>Please select all your symptoms</h4>
+			<div class="container">
+				<input type="checkbox" name="sym" value="95"><strong style="margin-left: 10px;">Sneezing</strong><br>
+				<input type="checkbox" name="sym" value="13"><strong style="margin-left: 10px;">Sore Throat</strong><br>
+				<input type="checkbox" name="sym" value="14"><strong style="margin-left: 10px;">Running Nose</strong><br>
+				<input type="checkbox" name="sym" value="138"><strong style="margin-left: 10px;">Sweating</strong><br>
+				<input type="checkbox" name="sym" value="175"><strong style="margin-left: 10px;">Chills</strong><br>
+				<input type="checkbox" name="sym" value="15"><strong style="margin-left: 10px;">Cough</strong><br>
+				<input type="checkbox" name="sym" value="207"><strong style="margin-left: 10px;">Dizziness</strong><br>
+				<input type="checkbox" name="sym" value="11"><strong style="margin-left: 10px;">Fever</strong><br>
+				<input type="checkbox" name="sym" value="136"><strong style="margin-left: 10px;">Neckpain</strong><br>
+				<input type="checkbox" name="sym" value="124"><strong style="margin-left: 10px;">Skin rash</strong><br>
+				<input type="checkbox" name="sym" value="101"><strong style="margin-left: 10px;">Vomitting</strong><br>
+
+			</div>
+			<h4>Please enter your gender</h4>
+			<input type="radio" name="gender" value="male"><h5><i class="fas fa-male"></i> Male</h5>
+			<input type="radio" name="gender" value="female"><h5><i class="fas fa-female"></i> Female</h5><br>
+			<h4>Please enter year of birth</h4>
+			<input style="border-radius: 3px;" class="age" type="text" name="y_o_b"><br>
+			<button class="btn btn-danger" style="padding: 10px 30px 10px 30px;"><strong style="font-size: 1.4rem;">Submit</strong></button><br>
+		</form>
+		<h4>{{content.prediction}}<h4>
+		<h4>{{content.hindi}}<h4>
+	</div>
+	<script type="text/javascript">
+		function googleTranslateElementInit() {
+			new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+		}
+	</script>
+
+	<script type="text/javascript"
+		src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+</body>
+
+</html>
